@@ -1,0 +1,15 @@
+services:
+  ispy:
+    image: doitandbedone/ispyagentdvr:latest
+    container_name: Ispy
+    environment:
+       TZ: Asia/Shanghai
+    volumes:
+      - /volume1/docker/ispy/media:/agent/Media/XML
+      - /volume1/docker/ispy/storage:/agent/Media/WebServerRoot/Media
+      - /volume1/docker/ispy/commands:/agent/Commands
+    ports:
+      - 8099:8090
+      - 3478:3478/udp
+      - 50000-50010:50000-50010/udp
+

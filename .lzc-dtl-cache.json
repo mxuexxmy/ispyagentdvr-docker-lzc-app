@@ -1,0 +1,44 @@
+{
+  "name": "iSpy",
+  "package": "xyz.mxue.ispy",
+  "description": "ISpy Agent DVR 是一个超级先进的视频监控平台，适用于 Windows，macOS，Linux，Raspberry Pi 和 **Docker**。这是一个非官方的 Docker 图像代理 DVR 从 iSpy 创建的方便。该软件为要管理的 IP 摄像机创建本地服务器。",
+  "homepage": "https://github.com/doitandbedone/ispyagentdvr-docker",
+  "author": "doitandbedone",
+  "app_features": [],
+  "subdomain": "ispy",
+  "version": "0.0.1",
+  "iconPath": "lzc-app-icon.png",
+  "composePath": "docker-compose.yml",
+  "unsupported_platforms": [],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "ispy_8099_8090": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    },
+    "ispy_3478_3478": {
+      "use": true,
+      "type": "port",
+      "protocol": "udp"
+    },
+    "ispy_50000-50010_50000-50010": {
+      "use": true,
+      "type": "port",
+      "protocol": "udp"
+    }
+  },
+  "image_doitandbedone_ispyagentdvr_latest": {
+    "originalImage": "doitandbedone/ispyagentdvr:latest",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/mxuexxmy/doitandbedone/ispyagentdvr:4f6e7afbabdcc5bf",
+    "timestamp": "2025-05-09T15:20:41.510Z"
+  },
+  "ispy_volume_/agent/Media/XML_action": "emptyDir",
+  "ispy_volume_/agent/Media/XML_location": "app_data",
+  "ispy_volume_/agent/Media/WebServerRoot/Media_action": "emptyDir",
+  "ispy_volume_/agent/Media/WebServerRoot/Media_location": "app_data",
+  "ispy_volume_/agent/Commands_action": "emptyDir",
+  "ispy_volume_/agent/Commands_location": "app_data"
+}
